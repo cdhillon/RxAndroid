@@ -1,17 +1,27 @@
-buildscript {
-    repositories {
-        mavenCentral()
+subprojects {
+    buildscript {
+        repositories {
+            google()
+            mavenCentral()
+            jcenter()
+        }
+        dependencies {
+            classpath 'com.android.tools.build:gradle:3.6.0-rc03'
+            classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+            classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
+            classpath 'org.jfrog.buildinfo:build-info-extractor-gradle:4.7.5'
+        }
     }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:2.1.0'
+
+    repositories {
+        google()
+        mavenCentral()
+        jcenter()
     }
 }
 
 ext {
     minSdkVersion = 9
-    compileSdkVersion = 23
-    buildToolsVersion = '23.0.3'
-    sourceCompatibility = JavaVersion.VERSION_1_7
+    compileSdkVersion = 29
+    sourceCompatibility = JavaVersion.VERSION_1_8
 }
-
-apply plugin: 'android-reporting'
